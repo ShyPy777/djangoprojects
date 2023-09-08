@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<h1>VIEW STUDENT DETAILS</h1>
+<table class="table table-bordered">
+    <tr>
+        <th>NAME</th>
+        <th>AGE</th>
+        <th>PLACE</th>
+    </tr>
+    {% for i in b %}
+<!--    #Using for loop to take different i values-->
+    <tr>
+        <td>{{i.name}}</td>
+        <td>{{i.age}}</td>
+        <td>{{i.place}}</td>
+    </tr>
+    {% endfor %}
+<!--    #In django we should mention for loop ending-->
+</table>
+{% endblock %}

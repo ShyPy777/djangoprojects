@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<h1>VIEW BOOK DETAILS</h1>
+<table class="table table-bordered">
+    <tr>
+        <th>title</th>
+        <th>author</th>
+        <th>price</th>
+        <th>PDF</th>
+        <th>cover</th>
+        <th>view</th>
+        <th>edit</th>
+        <th>delete</th>
+    </tr>
+    {% for i in b %}
+<!--    Using for loop to take different i values-->
+    <tr>
+        <td>{{i.title}}</td>
+        <td>{{i.author}}</td>
+        <td>{{i.price}}</td>
+        <td><a href="{{i.pdf.url}}">Download</a></td>
+        <td><img src="{{i.cover.url}}" height="100px" width="100px"></td>
+        <td><a href="{% url 'book:view' i.id %}" class="btn btn-danger">view</a></td>
+         <td><a href="{% url 'book:edit' i.id %}" class="btn btn-danger">edit</a></td>
+         <td><a href="{% url 'book:delete' i.id %}" class="btn btn-danger">delete</a></td>
+    </tr>
+    {% endfor %}
+<!--    In django we should mention for loop ending-->
+</table>
+<!--<ol>-->
+<!--    {% for i in b%}-->
+<!--    <li> Book Details</li>-->
+<!--    <ul>-->
+<!--        <li>{{i.title}}</li>-->
+<!--        <li>{{i.author}}</li>-->
+<!--        <li>{{i.price}}</li>-->
+<!--    </ul>-->
+<!--    {% endfor %}-->
+<!--</ol>-->
+{% endblock %}

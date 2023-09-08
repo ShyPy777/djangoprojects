@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<h1>ADD A NEW BOOK(BUILT-IN)</h1>
+<form method="POST">
+    {% csrf_token %}
+    <table>
+{{f.as_table}}
+    </table>
+    </div>
+    <div class="mb-3">
+        <input type="submit" class="btn btn-primary">
+    </div>
+</form>
+<!--<form method="POST">-->
+<!--    {% csrf_token %}-->
+<!--<div class="mb-3">-->
+<!--  <label  class="form-label">Title</label>-->
+<!--  <input type="text" class="form-control" name="t" placeholder="Enter Title">-->
+<!--</div>-->
+<!--<div class="mb-3">-->
+<!--  <label  class="form-label">Author</label>-->
+<!--  <input type="text" class="form-control" name="a" placeholder="Enter Author">-->
+<!--</div>-->
+<!--<div class="mb-3">-->
+<!--  <label class="form-label">Price</label>-->
+<!--    <input type="number" class="form-control" name="p"  placeholder="Enter Price">-->
+<!--</div>-->
+<!--    <div class="mb-3">-->
+<!--        <input type="submit" class="btn btn-primary">-->
+<!--    </div>-->
+<!--</form>-->
+{% endblock %}
